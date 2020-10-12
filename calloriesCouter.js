@@ -58,3 +58,34 @@ protein    13g
 
 */
 
+const ingredient = (name, weight, kcal, fat, carb, protein) => {
+    return {
+        name,
+        weight,
+        kcal,
+        fat,
+        carb,
+        protein
+    }
+};
+
+const oliveOil = ingredient('olive oil', 100, 821, 91.2, 0, 0);
+const tomatoPassata = ingredient('tomato passata', 500, 28, 0.1, 5.1, 1.4);
+const ikeaMeatballs = ingredient('ikea meatballs', 400, 254, 20, 4, 14);
+const mushrrooms = ingredient('mushrooms', 450, 108, 11, 0.4, 1.4);
+const sauerkraut = ingredient('sauerkraut', 900, 13, 0.5, 1, 0.8);
+const kielbasaZywiecka = ingredient('kielbasa zywiecka', 280, 216, 14, 0.5, 22);
+const kielbasaTorunksa = ingredient('kielbasa torunska', 350, 268, 9.2, 2.3, 13);
+
+
+console.log(oliveOil);
+console.log(tomatoPassata);
+console.log(ikeaMeatballs);
+console.log(mushrrooms);
+console.log(sauerkraut);
+console.log(kielbasaZywiecka);
+console.log(kielbasaTorunksa);
+
+
+
+
