@@ -1,63 +1,3 @@
-/*
-KSalawa
-App counting calories in a dish prepared, counting nutritio nand calories of individual ingredients, and a portion of a ready meal.
-11 october 2020, writen while learning to code on codecademy.com
-*/
-
-
-/*
-ingredients used:
-
-100ml olive
-kcal: 821
-fat: 91.2
-
-
-500g tomato passata
-per 100g:
-kcal       28
-fat        0.1g
-carb       5.1g
-protein    1.4g
-
-
-400g ikea meatballs
-per 100g:
-kcal       254
-fat        20g
-carb       4g
-protein    14g
-
-450g mushrom
-per 100g:
-kcal       108
-fat        11g
-carb       0.4g
-protein    1.4g
-
-900g sauerkraut
-per 100g:
-kcal       13
-fat        0.5g
-carb       1g
-protein    0.8g
-
-280g kielbasa zywiecka
-per 100g:
-kcal       216
-fat        14g
-carb       0.5g
-protein    22g
-
-350g kielbasa tounska
-per 100g:
-kcal       268
-fat        9.2g
-carb       2.3g
-protein    13g
-
-*/
-
 const ingredient = (name, weight, kcal, fat, carb, protein) => {
     return {
         name,
@@ -86,15 +26,91 @@ const fatInBigosArr = [];
 const carbInBigosArr = [];
 const proteinInBigosArr = [];
 
+
 //loop through ingredients and add total calories by weight to caloriesInBigos array
 for (i = 0; i < bigosIngredients.length; i++) {
     caloriesInBigosArr.push(bigosIngredients[i].kcal * (bigosIngredients[i].weight / 100));
     //console.log(bigosIngredients[i].kcal);
 }
-//console.log(caloriesInBigosArr)
+
+//loop through ingredients and add total fats by weight to fatInBigos array 1g of fat is 9kcal
+for (i = 0; i < bigosIngredients.length; i++) {
+    fatInBigosArr.push((bigosIngredients[i].fat * (bigosIngredients[i].weight / 100)) * 9);
+    //console.log(bigosIngredients[i].kcal);
+}
+
+//loop through ingredients and add total carb by weight to carbInBigos array 1g of fat is 4kcal
+for (i = 0; i < bigosIngredients.length; i++) {
+    carbInBigosArr.push((bigosIngredients[i].carb * (bigosIngredients[i].weight / 100)) * 4);
+    //console.log(bigosIngredients[i].kcal);
+}
+//loop through ingredients and add total protein by weight to proteinInBigos array 1g of fat is 4kcal
+for (i = 0; i < bigosIngredients.length; i++) {
+    proteinInBigosArr.push((bigosIngredients[i].protein * (bigosIngredients[i].weight / 100)) * 4);
+    //console.log(bigosIngredients[i].kcal);
+}
+
+
+
+//add up array values
 const sumKcal = caloriesInBigosArr.reduce(function(a, b){
-    return a + b;
+    return Math.round(a + b);
+    
 }, 0);
 
-console.log(sumKcal);
+const sumFat = fatInBigosArr.reduce(function(a, b){
+    return Math.round(a + b);
+}, 0);
 
+const sumCarb = carbInBigosArr.reduce(function(a, b){
+    return Math.round(a + b);
+}, 0);
+
+const sumProtein = proteinInBigosArr.reduce(function(a, b){
+    return Math.round(a + b);
+}, 0);
+
+
+
+//console.log(sumKcal);
+//console.log(sumFat);
+//console.log(sumCarb);
+//console.log(sumProtein);
+//console.log(totalCalorieFromIngredients);
+
+const totalCalorieFromIngredients = [sumFat, sumCarb, sumProtein];
+const sumKcalFromIngredients = totalCalorieFromIngredients.reduce(function(a, b){
+    return Math.round(a + b);
+}, 0);
+/*
+console.log(`Total calories by label: ${sumKcal}`);
+console.log(`Total caloreis from ingredients: ${sumKcalFromIngredients}`);
+console.log(`${Math.round(sumFat / sumKcal * 100) }% of FAT`);
+console.log(`${Math.round(sumCarb / sumKcal * 100) }% of CARB`);
+console.log(`${Math.round(sumProtein / sumKcal * 100) }% of PROTEIN`);
+
+console.log(bigosIngredients);
+*/
+
+const bigosIngredientArr = [];
+for (i = 0; i < bigosIngredients.length; i++) {
+    bigosIngredientArr.push(bigosIngredients[i].name);
+};
+
+//console.log(bigosIngredientArr);
+
+const ingredientsList = bigosIngredientArr.join(', ');
+//console.log(ingredientsList);
+
+console.log(`12 Oct 2020 Bigos:
+
+Ingredients used:
+${ingredientsList}
+
+total calories: ${sumKcal}
+
+ 
+`)
+console.log(`${Math.round(sumFat / sumKcal * 100) }% of FAT`);
+console.log(`${Math.round(sumCarb / sumKcal * 100) }% of CARB`);
+console.log(`${Math.round(sumProtein / sumKcal * 100) }% of PROTEIN`);
