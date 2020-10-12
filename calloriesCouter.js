@@ -123,6 +123,7 @@ const sauerkrautKcal = sauerkraut.kcal * (sauerkraut.weight / 100);
 const kielbasaZywieckaKcal = kielbasaZywiecka.kcal * (kielbasaZywiecka.weight / 100);
 const kielbasaTorunksaKcal = kielbasaTorunksa.kcal * (kielbasaTorunksa.weight / 100);
 
+/*
 console.log(oliveOilKcal);
 console.log(tomatoPassataKcal);
 console.log(ikeaMeatballsKcal);
@@ -130,9 +131,9 @@ console.log(mushromsKcal);
 console.log(sauerkrautKcal);
 console.log(kielbasaTorunksaKcal);
 console.log(kielbasaZywieckaKcal);
+*/ 
 
-console.log(`Total of calories used in Bigos:
-
+console.log(`Callories used in Bigos:
 ${oliveOil.name}; ${oliveOilKcal}
 ${tomatoPassata.name}; ${tomatoPassataKcal}
 ${ikeaMeatballs.name}; ${ikeaMeatballsKcal}
@@ -140,9 +141,24 @@ ${mushrrooms.name}; ${mushromsKcal}
 ${sauerkraut.name}; ${sauerkrautKcal}
 ${kielbasaZywiecka.name}; ${kielbasaZywieckaKcal}
 ${kielbasaTorunksa.name}; ${kielbasaTorunksaKcal}
-
 `); 
 
-const totatKcal = oliveOilKcal + tomatoPassataKcal + ikeaMeatballsKcal + mushromsKcal + sauerkrautKcal + kielbasaZywieckaKcal + kielbasaTorunksaKcal;
-console.log(`Total callories in bigos: ${totatKcal}`)
+const bigosKcal = oliveOilKcal + tomatoPassataKcal + ikeaMeatballsKcal + mushromsKcal + sauerkrautKcal + kielbasaZywieckaKcal + kielbasaTorunksaKcal;
+console.log(`Total callories in bigos: ${bigosKcal}`)
+
+// fat carb protein
+
+const fatBigos = (oliveOil.fat * oliveOil.weight / 100) + (tomatoPassata.fat * tomatoPassata.weight / 100) + (ikeaMeatballs.fat * ikeaMeatballs.weight / 100) + (mushrrooms.fat * mushrrooms.weight / 100) + (sauerkraut.fat * sauerkraut.weight / 100) + (kielbasaZywiecka.fat * kielbasaZywiecka.weight / 100) + (kielbasaTorunksa.fat * kielbasaTorunksa.weight / 100)
+console.log(`There are ${Math.floor(fatBigos) * 9}kcal from fat in Bigos`);
+
+const carbBigos = (oliveOil.carb * oliveOil.weight / 100) + (tomatoPassata.carb * tomatoPassata.weight / 100) + (ikeaMeatballs.carb * ikeaMeatballs.weight / 100) + (mushrrooms.carb * mushrrooms.weight / 100) + (sauerkraut.carb * sauerkraut.weight / 100) + (kielbasaZywiecka.carb * kielbasaZywiecka.weight / 100) + (kielbasaTorunksa.carb * kielbasaTorunksa.weight / 100)
+console.log(`There are ${Math.floor(carbBigos) * 4}kcal from carbs in Bigos`);
+
+const proteinBigos = (oliveOil.protein * oliveOil.weight / 100) + (tomatoPassata.protein * tomatoPassata.weight / 100) + (ikeaMeatballs.protein * ikeaMeatballs.weight / 100) + (mushrrooms.protein * mushrrooms.weight / 100) + (sauerkraut.protein * sauerkraut.weight / 100) + (kielbasaZywiecka.protein * kielbasaZywiecka.weight / 100) + (kielbasaTorunksa.protein * kielbasaTorunksa.weight / 100)
+console.log(`There are ${Math.floor(carbBigos) * 4}kcal from protein in Bigos`);
+
+
+const totalFromNutrients = (Math.floor(fatBigos * 9) + (carbBigos * 4) + (proteinBigos * 4));
+console.log(`Total callories calculatet from nutrients = ${totalFromNutrients}`);
+console.log(`${Math.floor(((Math.floor(fatBigos) * 9) * 100)/ bigosKcal)}% of fat, ${Math.floor(((Math.floor(carbBigos) * 4) * 100) / bigosKcal)}% carbs, ${Math.floor(((Math.floor(proteinBigos) * 4) * 100) / bigosKcal)}% protein.`)
 
