@@ -92,7 +92,6 @@ const bigosIngredients = () => {
 
     ${oliveOil.name} - ${oliveOil.weight}g
     ${tomatoPassata.name} - ${oliveOil.weight}g
-    ${oliveOil.name} - ${tomatoPassata.weight}g
     ${ikeaMeatballs.name} - ${ikeaMeatballs.weight}g
     ${mushrrooms.name} - ${mushrrooms.weight}g
     ${sauerkraut.name} - ${sauerkraut.weight}g
@@ -106,8 +105,7 @@ const ingredientKcalPer100 = () => {
     console.log(`Kcal per 100g of individual ingredient are:
 
     ${oliveOil.name} - ${oliveOil.kcal}kcal
-    ${tomatoPassata.name} - ${oliveOil.kcal}kcal
-    ${oliveOil.name} - ${tomatoPassata.kcal}kcal
+    ${tomatoPassata.name} - ${tomatoPassata.kcal}kcal
     ${ikeaMeatballs.name} - ${ikeaMeatballs.kcal}kcal
     ${mushrrooms.name} - ${mushrrooms.kcal}kcal
     ${sauerkraut.name} - ${sauerkraut.kcal}kcal
@@ -116,5 +114,35 @@ const ingredientKcalPer100 = () => {
 
     `)
 };
+//callories in product used
+const oliveOilKcal = oliveOil.kcal * (oliveOil.weight / 100);
+const tomatoPassataKcal = tomatoPassata.kcal * (tomatoPassata.weight / 100);
+const ikeaMeatballsKcal = ikeaMeatballs.kcal * (ikeaMeatballs.weight / 100);
+const mushromsKcal = mushrrooms.kcal * (mushrrooms.weight / 100);
+const sauerkrautKcal = sauerkraut.kcal * (sauerkraut.weight / 100);
+const kielbasaZywieckaKcal = kielbasaZywiecka.kcal * (kielbasaZywiecka.weight / 100);
+const kielbasaTorunksaKcal = kielbasaTorunksa.kcal * (kielbasaTorunksa.weight / 100);
 
+console.log(oliveOilKcal);
+console.log(tomatoPassataKcal);
+console.log(ikeaMeatballsKcal);
+console.log(mushromsKcal);
+console.log(sauerkrautKcal);
+console.log(kielbasaTorunksaKcal);
+console.log(kielbasaZywieckaKcal);
+
+console.log(`Total of calories used in Bigos:
+
+${oliveOil.name}; ${oliveOilKcal}
+${tomatoPassata.name}; ${tomatoPassataKcal}
+${ikeaMeatballs.name}; ${ikeaMeatballsKcal}
+${mushrrooms.name}; ${mushromsKcal}
+${sauerkraut.name}; ${sauerkrautKcal}
+${kielbasaZywiecka.name}; ${kielbasaZywieckaKcal}
+${kielbasaTorunksa.name}; ${kielbasaTorunksaKcal}
+
+`); 
+
+const totatKcal = oliveOilKcal + tomatoPassataKcal + ikeaMeatballsKcal + mushromsKcal + sauerkrautKcal + kielbasaZywieckaKcal + kielbasaTorunksaKcal;
+console.log(`Total callories in bigos: ${totatKcal}`)
 
