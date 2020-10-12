@@ -68,7 +68,7 @@ const ingredient = (name, weight, kcal, fat, carb, protein) => {
         protein
     }
 };
-
+//objects of exact ingredients used to make bigos
 const oliveOil = ingredient('olive oil', 100, 821, 91.2, 0, 0);
 const tomatoPassata = ingredient('tomato passata', 500, 28, 0.1, 5.1, 1.4);
 const ikeaMeatballs = ingredient('ikea meatballs', 400, 254, 20, 4, 14);
@@ -77,7 +77,7 @@ const sauerkraut = ingredient('sauerkraut', 900, 13, 0.5, 1, 0.8);
 const kielbasaZywiecka = ingredient('kielbasa zywiecka', 280, 216, 14, 0.5, 22);
 const kielbasaTorunksa = ingredient('kielbasa torunska', 350, 268, 9.2, 2.3, 13);
 
-
+/*
 console.log(oliveOil);
 console.log(tomatoPassata);
 console.log(ikeaMeatballs);
@@ -85,7 +85,36 @@ console.log(mushrrooms);
 console.log(sauerkraut);
 console.log(kielbasaZywiecka);
 console.log(kielbasaTorunksa);
+*/
 
+const bigosIngredients = () => {
+    console.log(`Ingredients used for Bigos on 11th of October 2020:
 
+    ${oliveOil.name} - ${oliveOil.weight}g
+    ${tomatoPassata.name} - ${oliveOil.weight}g
+    ${oliveOil.name} - ${tomatoPassata.weight}g
+    ${ikeaMeatballs.name} - ${ikeaMeatballs.weight}g
+    ${mushrrooms.name} - ${mushrrooms.weight}g
+    ${sauerkraut.name} - ${sauerkraut.weight}g
+    ${kielbasaZywiecka.name} - ${kielbasaZywiecka.weight}g
+    ${kielbasaTorunksa.name} - ${kielbasaTorunksa.weight}g
+
+    `)
+};
+
+const ingredientKcalPer100 = () => {
+    console.log(`Kcal per 100g of individual ingredient are:
+
+    ${oliveOil.name} - ${oliveOil.kcal}kcal
+    ${tomatoPassata.name} - ${oliveOil.kcal}kcal
+    ${oliveOil.name} - ${tomatoPassata.kcal}kcal
+    ${ikeaMeatballs.name} - ${ikeaMeatballs.kcal}kcal
+    ${mushrrooms.name} - ${mushrrooms.kcal}kcal
+    ${sauerkraut.name} - ${sauerkraut.kcal}kcal
+    ${kielbasaZywiecka.name} - ${kielbasaZywiecka.kcal}kcal
+    ${kielbasaTorunksa.name} - ${kielbasaTorunksa.kcal}kcal
+
+    `)
+};
 
 
